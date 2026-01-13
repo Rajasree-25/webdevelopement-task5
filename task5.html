@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechShop - Premium electronics and gadgets store with cutting-edge technology">
+    <meta name="keywords" content="electronics, gadgets, smartphones, laptops, tech">
+    <title>TechShop | Premium Electronics Store</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    <link rel="stylesheet" href="task5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    
+    <div class="global-controls">
+        <div class="language-selector">
+            <select id="languageSelect" aria-label="Select language">
+                <option value="en">🇺🇸 English</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="fr">🇫🇷 Français</option>
+            </select>
+        </div>
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    
+    <header class="main-header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="#" class="logo" aria-label="TechShop Home">
+                <i class="fas fa-laptop-code"></i>
+                <span>TechShop</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#products" class="nav-link" data-i18n="nav.products">Products</a></li>
+                    <li><a href="#categories" class="nav-link" data-i18n="nav.categories">Categories</a></li>
+                    <li><a href="#deals" class="nav-link" data-i18n="nav.deals">Deals</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                </ul>
+            </nav>
+
+            <div class="search-container">
+                <input type="search" id="searchInput" placeholder="Search products..." aria-label="Search products">
+                <button id="searchBtn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div id="searchResults" class="search-results" hidden></div>
+            </div>
+
+         
+            <div class="user-actions">
+                <button id="userBtn" class="action-btn" aria-label="User menu">
+                    <i class="fas fa-user"></i>
+                </button>
+                <button id="wishlistBtn" class="action-btn" aria-label="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span id="wishlistCount" class="badge">0</span>
+                </button>
+                <button id="cartBtn" class="action-btn" aria-label="Shopping cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount" class="badge">0</span>
+                </button>
+                <button id="menuToggle" class="action-btn menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+    <main id="main-content">
+       
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 data-i18n="hero.title">Experience Tomorrow's Technology Today</h1>
+                    <p data-i18n="hero.subtitle">Discover cutting-edge electronics, smart gadgets, and premium accessories that redefine your digital lifestyle.</p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary" data-i18n="hero.shop">Shop Now</a>
+                        <a href="#categories" class="btn btn-secondary" data-i18n="hero.explore">Explore Categories</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <picture>
+                        <source type="image/webp" 
+                                srcset="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=60&fm=webp 400w,
+                                        https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60&fm=webp 800w,
+                                        https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=60&fm=webp 1200w"
+                                sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px">
+                        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60" 
+                             alt="Modern technology gadgets" 
+                             loading="lazy"
+                             width="800"
+                             height="600">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="categories" class="categories-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="categories.title">Shop by Category</h2>
+                <div class="categories-grid">
+                    <div class="category-card" data-category="smartphones">
+                        <div class="category-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 data-i18n="categories.smartphones">Smartphones</h3>
+                        <p data-i18n="categories.smartphones_desc">Latest models & accessories</p>
+                    </div>
+                    <div class="category-card" data-category="laptops">
+                        <div class="category-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3 data-i18n="categories.laptops">Laptops</h3>
+                        <p data-i18n="categories.laptops_desc">Powerful computing solutions</p>
+                    </div>
+                    <div class="category-card" data-category="audio">
+                        <div class="category-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <h3 data-i18n="categories.audio">Audio</h3>
+                        <p data-i18n="categories.audio_desc">Immersive sound experience</p>
+                    </div>
+                    <div class="category-card" data-category="wearables">
+                        <div class="category-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 data-i18n="categories.wearables">Wearables</h3>
+                        <p data-i18n="categories.wearables_desc">Smart watches & bands</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="products" class="products-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="products.title">Featured Products</h2>
+                    <div class="product-filters">
+                        <button class="filter-btn active" data-filter="all" data-i18n="filters.all">All</button>
+                        <button class="filter-btn" data-filter="smartphones" data-i18n="filters.smartphones">Smartphones</button>
+                        <button class="filter-btn" data-filter="laptops" data-i18n="filters.laptops">Laptops</button>
+                        <button class="filter-btn" data-filter="audio" data-i18n="filters.audio">Audio</button>
+                        <button class="filter-btn" data-filter="wearables" data-i18n="filters.wearables">Wearables</button>
+                    </div>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                 
+                </div>
+                <div class="section-footer">
+                    <button id="loadMore" class="btn btn-outline" data-i18n="products.loadMore">Load More Products</button>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="deals" class="deals-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="deals.title">Today's Hot Deals</h2>
+                <div class="deals-slider">
+                    <div class="deal-card">
+                        <div class="deal-image">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Sony WH-1000XM5" 
+                                 loading="lazy">
+                        </div>
+                        <span class="deal-badge">-30%</span>
+                        <div class="deal-content">
+                            <h3>Sony WH-1000XM5</h3>
+                            <p data-i18n="deals.deal1.desc">Noise cancellation & 24h battery</p>
+                            <div class="deal-price">
+                                <span class="original-price">₹28,999</span>
+                                <span class="sale-price">₹20,299</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deal-card">
+                        <div class="deal-image">
+                            <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="ASUS ROG Zephyrus" 
+                                 loading="lazy">
+                        </div>
+                        <span class="deal-badge">-25%</span>
+                        <div class="deal-content">
+                            <h3>ASUS ROG Zephyrus</h3>
+                            <p data-i18n="deals.deal2.desc">RTX 4060, 16GB RAM, 1TB SSD</p>
+                            <div class="deal-price">
+                                <span class="original-price">₹1,69,999</span>
+                                <span class="sale-price">₹1,27,499</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="deal-card">
+                        <div class="deal-image">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Garmin Fenix 7" 
+                                 loading="lazy">
+                        </div>
+                        <span class="deal-badge">-40%</span>
+                        <div class="deal-content">
+                            <h3>Garmin Fenix 7</h3>
+                            <p data-i18n="deals.deal3.desc">Health tracking & notifications</p>
+                            <div class="deal-price">
+                                <span class="original-price">₹75,999</span>
+                                <span class="sale-price">₹45,599</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="features.title">Why Choose TechShop</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3 data-i18n="features.fastShipping">Fast Shipping</h3>
+                        <p data-i18n="features.fastShippingDesc">Free 2-day delivery on orders over ₹8,217</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 data-i18n="features.warranty">2-Year Warranty</h3>
+                        <p data-i18n="features.warrantyDesc">All products covered for peace of mind</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 data-i18n="features.support">24/7 Support</h3>
+                        <p data-i18n="features.supportDesc">Expert help whenever you need it</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h3 data-i18n="features.returns">Easy Returns</h3>
+                        <p data-i18n="features.returnsDesc">30-day return policy, no questions asked</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer id="about" class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>TechShop</span>
+                    </div>
+                    <p data-i18n="footer.description">Your premier destination for cutting-edge technology and premium electronics.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                        <li><a href="#products" data-i18n="nav.products">Products</a></li>
+                        <li><a href="#categories" data-i18n="nav.categories">Categories</a></li>
+                        <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.support">Support</h3>
+                    <ul>
+                        <li><a href="#" data-i18n="footer.help">Help Center</a></li>
+                        <li><a href="#" data-i18n="footer.contact">Contact Us</a></li>
+                        <li><a href="#" data-i18n="footer.shipping">Shipping Info</a></li>
+                        <li><a href="#" data-i18n="footer.returns">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-i18n="footer.newsletter">Newsletter</h3>
+                    <p data-i18n="footer.newsletterDesc">Subscribe for exclusive deals and updates</p>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email" required data-i18n-placeholder="placeholder.email">
+                        <button type="submit" class="btn btn-primary" data-i18n="footer.subscribe">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">&copy; 2024 TechShop. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="#" data-i18n="footer.terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="authModalTitle">Login</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="authForm">
+                    <div class="form-group" id="nameField" style="display: none;">
+                        <label for="authName" data-i18n="auth.name">Full Name</label>
+                        <input type="text" id="authName" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="authEmail" data-i18n="auth.email">Email Address</label>
+                        <input type="email" id="authEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="authPassword" data-i18n="auth.password">Password</label>
+                        <input type="password" id="authPassword" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group" id="confirmPasswordField" style="display: none;">
+                        <label for="confirmPassword" data-i18n="auth.confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="authSubmit" data-i18n="auth.login">Login</button>
+                    <p class="auth-switch">
+                        <span id="noAccountText" data-i18n="auth.noAccount">Don't have an account?</span>
+                        <a href="#" id="switchToRegister" data-i18n="auth.register">Register</a>
+                    </p>
+                    <p class="auth-switch" id="haveAccountText" style="display: none;">
+                        <span data-i18n="auth.haveAccount">Already have an account?</span>
+                        <a href="#" id="switchToLogin" data-i18n="auth.login">Login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal" id="wishlistModal" role="dialog" aria-modal="true" aria-labelledby="wishlistModalTitle" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="wishlistModalTitle" data-i18n="wishlist.title">My Wishlist</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="wishlistItems" class="modal-items">
+                    <p class="empty-state" data-i18n="wishlist.empty">Your wishlist is empty</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartModalTitle" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="cartModalTitle" data-i18n="cart.title">Shopping Cart</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="modal-items">
+                    <p class="empty-state" data-i18n="cart.empty">Your cart is empty</p>
+                </div>
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <span data-i18n="cart.total">Total:</span>
+                        <span id="cartTotal">₹0.00</span>
+                    </div>
+                    <button id="checkoutBtn" class="btn btn-primary" data-i18n="cart.checkout">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="toastContainer" class="toast-container"></div>
+
+
+    <div id="loadingSpinner" class="loading-spinner" hidden>
+        <div class="spinner"></div>
+    </div>
+
+    <script src="task5.js" defer></script>
+</body>
+</html>
