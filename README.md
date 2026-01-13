@@ -1,4 +1,4 @@
-**TechShop**
+
 TechShop is a responsive e-commerce web application built using HTML, CSS, and JavaScript.
 
 
